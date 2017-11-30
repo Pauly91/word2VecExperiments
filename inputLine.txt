@@ -1,0 +1,20 @@
+"How can we assist you: Hi, I'm working with a NetCDF file and not sure I understand the errors that I'm getting.  When I enter:
+ncdisp('wrfout_d02_2005-07-29_00:00:00','RDX')
+
+...I get the expected information for the variable, ""RDX"".  However, when I enter:
+dummy=ncread('wrfout_d02_2005-07-29_00/00/00','RDX');
+
+...I get the following errors:
+Error using internal.matlab.imagesci.nc/openToRead (line 1243)
+Could not open wrfout_d02_2005-07-29_00/00/00 for reading
+
+Error in internal.matlab.imagesci.nc (line 122)
+                    this.openToRead();
+
+Error in ncread (line 54)
+ncObj   = internal.matlab.imagesci.nc(ncFile);
+
+Here's a link to the Netcdf file that I'm working with:
+ftp://ftp.aoml.noaa.gov/pub/hrd/dunion/temp/matlab/
+
+After looking online to try and solve this, I saw some vague exchanges that make me wonder if the format of this NetCDF file (at least what ncdisp shows), ""Format: 64bit"", is the culprit.  Does it need to be ""netcdf4"" or is it simply another issue?"
